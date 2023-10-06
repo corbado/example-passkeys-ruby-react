@@ -62,8 +62,7 @@ class PagesController < ActionController::Base
 
         # Check if the token is valid
         unless decoded_token
-            @error_message = "JWT token is not valid!"
-            return render 'error'
+            return render json: { :error => "JWT token is not valid!" }.to_json, status: 400
         end
 
         # Extract information from the token
@@ -76,7 +75,8 @@ class PagesController < ActionController::Base
 
         rescue => e
         puts e.message
-        return render 'error'
+
+        return render json: { :error => e.message }.to_json, status: 400
         end
     end
   end

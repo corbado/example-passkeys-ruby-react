@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   match "/api/profile", to: "pages#api_profile", via: :get
   match "/manifest.json", to: "pages#manifest", via: :get
   match "/logo192.png", to: "pages#logo192", via: :get
+  match "/" => redirect("/login"), via: :get
 end
