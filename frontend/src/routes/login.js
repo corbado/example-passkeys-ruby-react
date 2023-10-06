@@ -1,9 +1,5 @@
 const Login = () => {
   var projectID = process.env.REACT_APP_CORBADO_PROJECT_ID;
-  console.log("projectID");
-  console.log(projectID);
-  console.log("process.env");
-  console.log(process.env);
 
   return (
     <div>
