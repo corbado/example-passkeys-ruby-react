@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   match "/login", to: "pages#login", via: :get
   match "/profile", to: "pages#profile", via: :get
+  match "/api/profile", to: "pages#api_profile", via: :get
   match "/manifest.json", to: "pages#manifest", via: :get
   match "/logo192.png", to: "pages#logo192", via: :get
-
-  match "/test", to: "pages#test", via: :get
 end

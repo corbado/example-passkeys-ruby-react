@@ -3,14 +3,37 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Login from "./routes/login";
+import Profile from "./routes/profile";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route index path="/profile" element={<Profile />}></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/" element={<Profile />}></Route>
+    </Route>
+  )
+);
 
 window.addEventListener("DOMContentLoaded", function (e) {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <RouterProvider router={router} />
+  );
+
+  /* const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
   );
+*/
 
   // If you want to start measuring performance in your app, pass a function
   // to log results (for example: reportWebVitals(console.log))

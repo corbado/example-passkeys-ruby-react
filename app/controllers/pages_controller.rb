@@ -15,18 +15,20 @@ class PagesController < ActionController::Base
         render file: 'frontend/build/manifest.json'
     end
 
-    def test
-        @project_id = Rails.application.credentials.corbado_project_id
-        render file: 'frontend/build/index.html'
-    end
-
-
     def login
         @project_id = Rails.application.credentials.corbado_project_id
-        render 'pages/login'
+        render file: 'frontend/build/index.html'
+        end
+    
+    def profile
+        @project_id = Rails.application.credentials.corbado_project_id
+        render file: 'frontend/build/index.html'
         end
 
-    def profile
+    def api_profile
+
+        puts "API PROFILE CALLED"
+
         @project_id = Rails.application.credentials.corbado_project_id
         @user_id = session[:user_id]
         @user_name = session[:user_name]
@@ -70,11 +72,11 @@ class PagesController < ActionController::Base
         @user_name = decoded_token["name"]
         @user_email = decoded_token["email"]
 
-        return render 'pages/profile'
+        return render json: { :user_id => @user_id, :user_name => @user_name, :user_email => @user_email }.to_json
 
         rescue => e
         puts e.message
-        redirect_to '/login'
+        return render 'error'
         end
     end
   end
