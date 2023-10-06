@@ -1,5 +1,4 @@
 import axios from "axios";
-import "@corbado/webcomponent";
 import "@corbado/webcomponent/pkg/auth_cui.css";
 import Corbado from "@corbado/webcomponent";
 import { useEffect, useState } from "react";
