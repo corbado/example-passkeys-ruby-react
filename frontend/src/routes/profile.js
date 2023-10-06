@@ -4,7 +4,6 @@ import Corbado from "@corbado/webcomponent";
 import { useEffect, useState } from "react";
 
 const Profile = () => {
-  console.log("Before");
   const [userID, setUserID] = useState("loading...");
   const [userName, setUserName] = useState("loading...");
   const [userEmail, setUserEmail] = useState("loading...");
@@ -40,7 +39,6 @@ const Profile = () => {
         setUserName("Unauthorized");
         setUserEmail("Unauthorized");
       });
-    console.log("userID After: ", userID);
     setChecked(true);
   }
 

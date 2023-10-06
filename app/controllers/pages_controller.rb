@@ -34,11 +34,9 @@ class PagesController < ActionController::Base
         @user_name = session[:user_name]
         @user_email = session[:user_email]
 
-        
-        project_id = Rails.application.credentials.corbado_project_id
 
-        issuer = "https://#{project_id}.frontendapi.corbado.io"
-        jwks_uri = "https://#{project_id}.frontendapi.corbado.io/.well-known/jwks"
+        issuer = "https://#{@project_id}.frontendapi.corbado.io"
+        jwks_uri = "https://#{@project_id}.frontendapi.corbado.io/.well-known/jwks"
 
         begin
         # Fetch JSON from the jwks_uri
@@ -66,7 +64,6 @@ class PagesController < ActionController::Base
         end
 
         # Extract information from the token
-        @project_id = project_id
         @user_id = decoded_token["sub"]
         @user_name = decoded_token["name"]
         @user_email = decoded_token["email"]
