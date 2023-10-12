@@ -5,35 +5,20 @@ require 'jwt'
 
 class PagesController < ActionController::Base
 
-    def logo192
-        @project_id = Rails.application.credentials.corbado_project_id
-        render file: 'frontend/build/logo192.png'
-    end
 
     def manifest
-        @project_id = Rails.application.credentials.corbado_project_id
         render file: 'frontend/build/manifest.json'
     end
 
-    def login
-        @project_id = Rails.application.credentials.corbado_project_id
+    def home
         render file: 'frontend/build/index.html'
-        end
-    
-    def profile
-        @project_id = Rails.application.credentials.corbado_project_id
-        render file: 'frontend/build/index.html'
-        end
+    end
 
     def api_profile
-
-        puts "API PROFILE CALLED"
-
-        @project_id = Rails.application.credentials.corbado_project_id
+        @project_id = Rails.application.config.corbado_project_id
         @user_id = session[:user_id]
         @user_name = session[:user_name]
         @user_email = session[:user_email]
-
 
         issuer = "https://#{@project_id}.frontendapi.corbado.io"
         jwks_uri = "https://#{@project_id}.frontendapi.corbado.io/.well-known/jwks"
