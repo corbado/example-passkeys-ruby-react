@@ -1,24 +1,46 @@
-# README
+# Passkey integration example for Ruby on Rails together with a React.js frontend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample implementation of a Ruby on Rails application with a React.js frontend that offers passkey authentication. For simple passkey-first authentication, the Corbado web component is used.
 
-Things you may want to cover:
+## File structure
 
-* Ruby version
+```
+...
+├── app
+|   ...
+|   ├── controllers
+|   |   └── pages_controller.rb    # Controller for our pages
+|   |
+├── config
+|   ...
+|   ├── environments                  
+|   |   ├── development.rb     # Development environment config
+|   |   └── production.rb      # Production environment config
+|   |
+|   └── routes.rb              # We configure our routes here
+|
+└── frontend
+    ...
+    ├── .env
+    └── src                  
+        ...
+        ├── index.js          # Sign in page which also contains the Corbado web component
+        └── routes                  
+            ├── login.js     # Development environment config
+            └── profile.js      # Production environment config
+```
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure
+a project in the [Corbado developer panel](https://app.corbado.com/signin#register).
 
-* Database creation
+Open the `development.rb` and `production.rb` files under /config/environments and set the `corbado_project_id` variable to your projectID.
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+Then you can run the project locally by executing the following command:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bin/rails s
+```
