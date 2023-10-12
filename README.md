@@ -14,20 +14,20 @@ This is a sample implementation of a Ruby on Rails application with a React.js f
 ├── config
 |   ...
 |   ├── environments                  
-|   |   ├── development.rb     # Development environment config
-|   |   └── production.rb      # Production environment config
+|   |   ├── development.rb         # Development environment config
+|   |   └── production.rb          # Production environment config
 |   |
-|   └── routes.rb              # We configure our routes here
+|   └── routes.rb                  # The Ruby on Rails routes are configured here
 |
 └── frontend
     ...
     ├── .env
     └── src                  
         ...
-        ├── index.js          # Sign in page which also contains the Corbado web component
+        ├── index.js               # Root of our React.js app which also contains the React.js routes 
         └── routes                  
-            ├── login.js     # Development environment config
-            └── profile.js      # Production environment config
+            ├── login.js           # Login page containing the Corbado webcomponent
+            └── profile.js         # Profile page showing information about the current user
 ```
 
 ## Prerequisites
