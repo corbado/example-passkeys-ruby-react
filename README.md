@@ -1,4 +1,4 @@
-# Passkey integration example for Ruby on Rails together with a React.js frontend
+# Passkey integration example for Ruby on Rails /  React.js app
 
 This is a sample implementation of a Ruby on Rails application with a React.js frontend that offers passkey authentication. For simple passkey-first authentication, the Corbado web component is used.
 
@@ -35,11 +35,11 @@ This is a sample implementation of a Ruby on Rails application with a React.js f
 Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure
 a project in the [Corbado developer panel](https://app.corbado.com/signin#register).
 
-Open the `development.rb` and `production.rb` files under /config/environments and set the `corbado_project_id` variable to your projectID.
+Open the `development.rb` and `production.rb` files under /config/environments and set the `corbado_project_id` variable to your Corbado project ID.
 
 ## Usage
 
-Then you can run the project locally by executing the following command:
+Then, you can run the project locally by executing the following command:
 
 ```bash
 bin/rails s
