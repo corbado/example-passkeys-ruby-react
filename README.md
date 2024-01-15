@@ -1,6 +1,8 @@
-# Passkey integration example for Ruby on Rails /  React.js app
+# Passkey-First Authentication Example for Ruby on Rails /  React.js App
 
 This is a sample implementation of a Ruby on Rails application with a React.js frontend that offers passkey authentication. For simple passkey-first authentication, the Corbado web component is used.
+
+Please read the [full blog post](https://www.corbado.com/blog/passkeys-ruby-on-rails-react) to see all the required steps to integrat passkeys into a Ruby on Rails / React app.
 
 ## File structure
 
