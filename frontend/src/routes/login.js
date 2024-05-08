@@ -1,18 +1,14 @@
-const Login = () => {
-  var projectID = process.env.REACT_APP_CORBADO_PROJECT_ID;
+import {CorbadoAuth} from "@corbado/react";
+import {useNavigate} from "react-router-dom";
+
+function Login()  {
+  const navigate = useNavigate()
 
   return (
     <div>
-      <corbado-auth project-id={projectID} conditional="yes">
-        <input
-          name="username"
-          id="corbado-username"
-          required
-          autocomplete="webauthn"
-        />
-      </corbado-auth>
+      <CorbadoAuth onLoggedIn={() => {navigate("/profile")}} />
     </div>
   );
-};
+}
 
 export default Login;

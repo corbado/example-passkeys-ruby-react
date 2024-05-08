@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Login from "./routes/login";
 import Profile from "./routes/profile";
+import {CorbadoProvider} from "@corbado/react";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +25,9 @@ const router = createBrowserRouter(
 
 window.addEventListener("DOMContentLoaded", function (e) {
   ReactDOM.createRoot(document.getElementById("root")).render(
-    <RouterProvider router={router} />
+      <CorbadoProvider projectId={process.env.REACT_APP_CORBADO_PROJECT_ID} setShortSessionCookie={true}>
+          <RouterProvider router={router} />
+      </CorbadoProvider>
   );
 
   reportWebVitals();
