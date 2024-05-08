@@ -1,8 +1,10 @@
 # Ruby on Rails & React Passkey Example App
 
-This is a sample implementation of a Ruby on Rails application with a React.js frontend that offers passkey authentication. For simple passkey-first authentication, the Corbado web component is used.
+This is a sample implementation of a Ruby on Rails application with a React.js frontend that offers passkey
+authentication. For simple passkey-first authentication, the Corbado UI components are used.
 
-Please read the [full blog post](https://www.corbado.com/blog/passkeys-ruby-on-rails-react) to see all the required steps to integrat passkeys into a Ruby on Rails / React app.
+Please read the [full blog post](https://www.corbado.com/blog/passkeys-ruby-on-rails-react) to see all the required
+steps to integrate passkeys into a Ruby on Rails / React app.
 
 ## File structure
 
@@ -28,7 +30,7 @@ Please read the [full blog post](https://www.corbado.com/blog/passkeys-ruby-on-r
         ...
         ├── index.js               # Root of our React.js app which also contains the React.js routes 
         └── routes                  
-            ├── login.js           # Login page containing the Corbado webcomponent
+            ├── login.js           # Login page containing the Corbado auth component
             └── profile.js         # Profile page showing information about the current user
 ```
 
@@ -37,9 +39,22 @@ Please read the [full blog post](https://www.corbado.com/blog/passkeys-ruby-on-r
 Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure
 a project in the [Corbado developer panel](https://app.corbado.com/signin#register).
 
-Open the `development.rb` and `production.rb` files under /config/environments and set the `corbado_project_id` variable to your Corbado project ID.
+Open the `development.rb` and `production.rb` files under /config/environments and set the `corbado_project_id` variable
+to your Corbado project ID.
 
 ## Usage
+
+Build the React frontend by heading into the frontend folder with
+
+```bash
+cd frontend
+```
+
+and then run
+
+```bash
+npm i && npm run build
+```
 
 Then, you can run the project locally by executing the following command:
 
